@@ -1,6 +1,8 @@
-package com.spring.inaction.section2;
+package com.spring.inaction.section2.interfaces;
 
 import org.springframework.stereotype.Component;
+
+import com.spring.inaction.section2.interfaces.base.CompactDisc;
 
 @Component
 public class SgtPeppers implements CompactDisc {

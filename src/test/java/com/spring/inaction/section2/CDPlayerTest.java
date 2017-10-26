@@ -9,6 +9,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.spring.inaction.section2.config.CDPlayerConfig;
+import com.spring.inaction.section2.interfaces.base.CompactDisc;
+
+import com.spring.inaction.section2.interfaces.base.MediaPlayer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = CDPlayerConfig.class)
@@ -21,11 +24,22 @@ public class CDPlayerTest {
 	@Autowired
 	private Map<String, CompactDisc> cds;
 
+	@Autowired
+	private Map<String, MediaPlayer> mps;
+
 	@Test
 	public void cdShouldNotBeNull() {
 		if (cds != null) {
 			System.out.println("CD NOT NULL!");
-			System.out.println(cds.keySet());
+			System.out.println("cds = " + cds.keySet());
+		}
+	}
+
+	@Test
+	public void mpShouldNotBeNull() {
+		if (mps != null) {
+			System.out.println("MP NOT NULL");
+			System.out.println("mps = " + mps.keySet());
 		}
 	}
 }
