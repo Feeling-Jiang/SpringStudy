@@ -7,6 +7,6 @@ import com.spring.inaction.section2.ComponentScanMark;
 
 @Configuration
 @ComponentScan(basePackageClasses = { ComponentScanMark.class })
-public class CDPlayerConfig {
+public class AutowiredConfig {
 
 }

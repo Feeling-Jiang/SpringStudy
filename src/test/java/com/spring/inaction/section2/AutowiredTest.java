@@ -8,14 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.spring.inaction.section2.config.CDPlayerConfig;
+import com.spring.inaction.section2.config.AutowiredConfig;
 import com.spring.inaction.section2.interfaces.base.CompactDisc;
 
-import com.spring.inaction.section2.interfaces.base.MediaPlayer;
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = CDPlayerConfig.class)
-public class CDPlayerTest {
+@ContextConfiguration(classes = AutowiredConfig.class)
+public class AutowiredTest {
 
 	/*
 	 * Spring对于Map(List、Set也一样)的自动装配，若CompactDisc各个实现类的@Component注解中未注明实例化Bean名称，
@@ -24,8 +22,8 @@ public class CDPlayerTest {
 	@Autowired
 	private Map<String, CompactDisc> cds;
 
-	@Autowired
-	private Map<String, MediaPlayer> mps;
+	// @Autowired
+	// private Map<String, MediaPlayer> mps;
 
 	@Test
 	public void cdShouldNotBeNull() {
@@ -35,11 +33,11 @@ public class CDPlayerTest {
 		}
 	}
 
-	@Test
-	public void mpShouldNotBeNull() {
-		if (mps != null) {
-			System.out.println("MP NOT NULL");
-			System.out.println("mps = " + mps.keySet());
-		}
-	}
+	// @Test
+	// public void mpShouldNotBeNull() {
+	// if (mps != null) {
+	// System.out.println("MP NOT NULL");
+	// System.out.println("mps = " + mps.keySet());
+	// }
+	// }
 }
